@@ -35,20 +35,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cde-2a-NTB">
-                                <rect key="frame" x="36" y="256" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonAction1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J39-ae-A6q"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVC-x6-Ezh">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVC-x6-Ezh">
                                 <rect key="frame" x="36" y="366" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="buttonAction2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eyo-jY-jvp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cde-2a-NTB">
+                                <rect key="frame" x="36" y="256" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="buttonAction1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J39-ae-A6q"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,6 +54,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="button1" destination="cde-2a-NTB" id="6rb-19-JlN"/>
+                        <outlet property="button2" destination="ZVC-x6-Ezh" id="EER-VB-eoy"/>
                         <outlet property="textField1" destination="dCK-Kd-GQL" id="CZe-o1-cIe"/>
                         <outlet property="textField2" destination="G7o-4n-zDm" id="IZ5-8v-WhL"/>
                     </connections>
