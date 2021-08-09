@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
 
-    @IBOutlet weak var textField1: UITextField!
-    @IBOutlet weak var textField2: UITextField!
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
+    @IBOutlet private weak var textField1: UITextField!
+    @IBOutlet private weak var textField2: UITextField!
+    @IBOutlet private weak var button1: UIButton!
+    @IBOutlet private weak var button2: UIButton!
 
     let okImage = UIImage(named: "ok")
     let ngImage = UIImage(named: "ng")
@@ -26,6 +26,8 @@ class ViewController: UIViewController {
 
         button1.setImage(ngImage, for: .normal)
         button2.setImage(ngImage, for: .normal)
+        self.textField1.delegate = self
+        self.textField2.delegate = self
     }
 
     @IBAction func buttonAction1(_ sender: UIButton) {
@@ -50,7 +52,10 @@ class ViewController: UIViewController {
         }
     }
 
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
 }
 
