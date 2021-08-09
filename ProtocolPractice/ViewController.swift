@@ -20,6 +20,23 @@ class ViewController: UIViewController,UITextFieldDelegate {
     var switch_flag1: Bool = false
     var switch_flag2: Bool = false
 
+    func memorize1(setValue: String) {
+        UserDefaults.standard.set(setValue, forKey: "textFieldKey1")
+    }
+
+    func memorize2(setValue: String) {
+        UserDefaults.standard.set(setValue, forKey: "textFieldKey2")
+    }
+
+    func loadMemorize1() {
+        let textFieldValue = UserDefaults.standard.string(forKey: "textFieldKey1")
+        textField1.text = textFieldValue
+    }
+
+    func loadMemorize2() {
+        let textFieldValue = UserDefaults.standard.string(forKey: "textFieldKey2")
+        textField2.text = textFieldValue
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,6 +45,9 @@ class ViewController: UIViewController,UITextFieldDelegate {
         button2.setImage(ngImage, for: .normal)
         self.textField1.delegate = self
         self.textField2.delegate = self
+
+        loadMemorize1()
+        loadMemorize2()
     }
 
     @IBAction func buttonAction1(_ sender: UIButton) {
@@ -53,6 +73,13 @@ class ViewController: UIViewController,UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        guard let setValue1 = textField1.text else { return false }
+        memorize1(setValue: setValue1)
+
+        guard let setValue2 = textField2.text else { return false }
+        memorize2(setValue: setValue2)
+
         textField.resignFirstResponder()
         return true
     }
