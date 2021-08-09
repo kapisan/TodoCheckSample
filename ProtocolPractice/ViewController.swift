@@ -72,6 +72,22 @@ class ViewController: UIViewController,UITextFieldDelegate {
         }
     }
 
+    @IBAction func clearButtonAction(_ sender: UIButton) {
+        if(switch_flag1 == false) {
+            print("switch_flag1:変更なし")
+        } else {
+            switch_flag1 = false
+            button1.setImage(ngImage, for: .normal)
+        }
+
+        if(switch_flag2 == false) {
+            print("switch_flag2:変更なし")
+        } else {
+            switch_flag2 = false
+            button2.setImage(ngImage, for: .normal)
+        }
+    }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         guard let setValue1 = textField1.text else { return false }
