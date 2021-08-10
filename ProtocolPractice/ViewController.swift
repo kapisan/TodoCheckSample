@@ -90,30 +90,12 @@ class ViewController: UIViewController,UITextFieldDelegate {
 
     @IBAction func buttonAction1(_ sender: UIButton) {
 
-        if(switch_flag1 == false) {
-            switch_flag1 = true
-            button1.setImage(okImage, for: .normal)
-            memorizeCheck1(setBool: true)
-        } else {
-            switch_flag1 = false
-            button1.setImage(ngImage, for: .normal)
-            memorizeCheck1(setBool: false)
-        }
-
-        
+        ifSwitch_flag1()
     }
 
     @IBAction func buttonAction2(_ sender: UIButton) {
 
-        if(switch_flag2 == false) {
-            switch_flag2 = true
-            button2.setImage(okImage, for: .normal)
-            memorizeCheck2(setBool: true)
-        } else {
-            switch_flag2 = false
-            button2.setImage(ngImage, for: .normal)
-            memorizeCheck2(setBool: false)
-        }
+        ifSwitch_flag2()
     }
 
     @IBAction func clearButtonAction(_ sender: UIButton) {
@@ -146,10 +128,27 @@ class ViewController: UIViewController,UITextFieldDelegate {
         return true
     }
 
+    func ifSwitch_flag1() {
+        if(switch_flag1 == false) {
+            switch_flag1 = true
+            button1.setImage(okImage, for: .normal)
+            memorizeCheck1(setBool: true)
+        } else {
+            switch_flag1 = false
+            button1.setImage(ngImage, for: .normal)
+            memorizeCheck1(setBool: false)
+        }
+    }
+
+    func ifSwitch_flag2() {
+        if(switch_flag2 == false) {
+            switch_flag2 = true
+            button2.setImage(okImage, for: .normal)
+            memorizeCheck2(setBool: true)
+        } else {
+            switch_flag2 = false
+            button2.setImage(ngImage, for: .normal)
+            memorizeCheck2(setBool: false)
+        }
+    }
 }
-
-protocol cgSize {
-
-}
-
-
