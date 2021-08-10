@@ -77,13 +77,13 @@ class ViewController: UIViewController,UITextFieldDelegate {
         self.textField1.delegate = self
         self.textField2.delegate = self
 
-        loadMemorize1()
-        loadMemorize2()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        loadMemorize1()
+        loadMemorize2()
         loadMemorizeCheck1()
         loadMemorizeCheck2()
     }
